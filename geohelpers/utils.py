@@ -36,9 +36,8 @@ def f4(df,d):
     ref = ' and '.join(aux)
 #     print(ref)
     return df.query(ref)
-
 def get_grid_info(df,raster_path, agg='sum', col='VOL', all_touched=False):
-	df_orig_crs = df.crs
+    df_orig_crs = df.crs
     dataset = rasterio.open(raster_path)
     affine=dataset.transform
     nodata_value = dataset.nodata
